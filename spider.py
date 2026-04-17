@@ -57,18 +57,18 @@ def crawl2():
         keyword_end = '费iOS小火箭订阅链接'
         start_index = page_source.find(keyword_start)
         if start_index == -1:
-            return "爬虫2：未找到内容"
+            return "未找到内容"
         end_index = page_source.find(keyword_end, start_index)
         if end_index == -1:
-            return "爬虫2：未找到结束标识"
+            return "未找到结束标识"
         text = page_source[start_index:end_index + len(keyword_end)]
         start = text.find('https')
         end = text.find('\\', start)
         if start != -1 and end != -1:
             return text[start:end]
-        return "爬虫2：未提取到有效链接"
+        return "未提取到有效链接"
     except Exception as e:
-        return f"爬虫2异常：{str(e)}"
+        return f"{str(e)}"
 
 # ==============================================
 # 写入 README.md
@@ -82,10 +82,10 @@ if __name__ == "__main__":
 
     content = f"""# 自动更新订阅
 
-## 每4小时更新（爬虫1）
+## 长node更新
 {data1}
 
-## 每1小时更新（爬虫2）
+## 短node更新
 {data2}
 
 ---
