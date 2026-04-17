@@ -24,18 +24,18 @@ def crawl1():
         keyword_end = 'Clash免费节点订阅'
         start_index = page_source.find(keyword_start)
         if start_index == -1:
-            return "爬虫1：未找到内容"
+            return "1：未找到内容"
         end_index = page_source.find(keyword_end, start_index)
         if end_index == -1:
-            return "爬虫1：未找到结束标识"
+            return "1：未找到结束标识"
         text = page_source[start_index:end_index + len(keyword_end)]
         start = text.find('http')
         end = text.find('\\', start)
         if start != -1 and end != -1:
             return text[start:end]
-        return "爬虫1：未提取到有效链接"
+        return "1：未提取到有效链接"
     except Exception as e:
-        return f"爬虫1异常：{str(e)}"
+        return f"1异常：{str(e)}"
 
 # ==============================================
 # 爬虫 2：每 1 小时更新
