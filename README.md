@@ -1,10 +1,10 @@
 # 自动更新订阅
 
-## 每4小时更新（爬虫1）
+## 长node更新
 https://raw.githubusercontent.com/WLget/V2Ray_configs_64/refs/heads/master/ConfigSub_list.txt
 
-## 每1小时更新（爬虫2）
-https://uPGcwv.absslk.xyz/985dc433026b4ee856c528258988a149
+## 短node更新
+https://yHAQtP.absslk.xyz/e827a9b0978ef8ad3330658056122f97
 
 ---
-⏱ 全量更新时间：2026-04-17 09:35:28（东八区）
+⏱ 全量更新时间：2026-04-17 12:38:49（东八区）
