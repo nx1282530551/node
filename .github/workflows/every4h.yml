@@ -1,0 +1,20 @@
+name: Every4Hour
+on:
+  schedule:
+    - cron: '0 */4 * * *'
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests
+      - run: python3 spider.py
+      - uses: EndBug/add-and-commit@v9
+        with:
+          message: "自动更新（4小时）"
