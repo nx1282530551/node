@@ -4,7 +4,7 @@
 https://raw.githubusercontent.com/WLget/V2Ray_configs_64/refs/heads/master/ConfigSub_list.txt
 
 ## 短node更新
-https://livBDO.absslk.xyz/8eb010630b5a871824363ee28983019a
+https://STZ97f.absslk.xyz/236d14059d090f1e1767414b274986c4
 
 ---
-⏱ 全量更新时间：2026-04-21 15:57:38（东八区）
+⏱ 全量更新时间：2026-04-21 17:43:17（东八区）
