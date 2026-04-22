@@ -4,7 +4,7 @@
 https://raw.githubusercontent.com/WLget/V2Ray_configs_64/refs/heads/master/ConfigSub_list.txt
 
 ## 短node更新
-https://i6FgGz.absslk.xyz/46cc512bf5ebdafd0acf64addddfffab
+https://kmSl8E.absslk.xyz/dc35d9122b0b45c3b8f2c1197e816288
 
 ---
-⏱ 全量更新时间：2026-04-22 14:02:09（东八区）
+⏱ 全量更新时间：2026-04-22 15:54:04（东八区）
