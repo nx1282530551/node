@@ -7,4 +7,4 @@ https://raw.githubusercontent.com/WLget/V2Ray_configs_64/refs/heads/master/Confi
 https://KcwStl.absslk.xyz/2ffc4f583c10b60c13ed68ed540e500f
 
 ---
-⏱ 全量更新时间：2026-04-22 21:38:02（东八区）
+⏱ 全量更新时间：2026-04-22 21:48:53（东八区）
