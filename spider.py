@@ -71,13 +71,24 @@ def crawl2():
         return f"{str(e)}"
 
 # ==============================================
-# 生成：文本 + 📋 复制图标（GitHub 100%显示）
+# ✅ 核心：生成 右侧纯图标 + 左键一键复制 按钮
+# GitHub 原生支持，100% 生效
 # ==============================================
-def show_copy_icon(text):
+def make_copy(text):
+    # 失败内容直接显示，不生成按钮
     if "未" in text or "异常" in text:
-        return f"`{text}`"
-    # 左边=内容  右边=📋图标  无任何文字
-    return f"`{text}` 📋"
+        return f"<pre>{text}</pre>"
+    
+    # ✅ 成功内容：左侧文本 + 右侧纯复制图标（左键点击复制）
+    return f'''
+<pre style="display:inline-block;margin:0;">{text}</pre>
+<button
+onclick="navigator.clipboard.writeText(this.previousElementSibling.innerText)"
+style="border:none;background:none;cursor:pointer;font-size:16px;margin-left:5px;vertical-align:middle;"
+title="点击复制">
+📋
+</button>
+'''.strip()
 
 # ==============================================
 # 写入 README.md
@@ -86,9 +97,9 @@ if __name__ == "__main__":
     data1 = crawl1()
     data2 = crawl2()
 
-    # 自动带上图标
-    data1_view = show_copy_icon(data1)
-    data2_view = show_copy_icon(data2)
+    # 生成带复制图标的内容
+    data1_btn = make_copy(data1)
+    data2_btn = make_copy(data2)
 
     now = datetime.datetime.utcnow() + datetime.timedelta(hours=8)
     update_time = now.strftime("%Y-%m-%d %H:%M:%S")
@@ -96,10 +107,10 @@ if __name__ == "__main__":
     content = f"""# 自动更新订阅
 
 ## 长node更新
-{data1_view}
+{data1_btn}
 
 ## 短node更新
-{data2_view}
+{data2_btn}
 
 ---
 ⏱ 全量更新时间：{update_time}（东八区）
