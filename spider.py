@@ -5,15 +5,13 @@ import re
 import datetime
 
 # ==============================================
-# 爬虫 1：每 4 小时更新
+# 爬虫 1
 # ==============================================
 def crawl1():
     try:
         user_agent_list = [
             'Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.5195.127 Safari/537.36',
             'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7); rv:120.0) Gecko/20100101 Firefox/120.0',
-            'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.2420.81 Safari/537.36     Edg/123.0.2420.81',
-            'Mozilla/5.0 (Windows NT 10.0; Win32); rv:115.0) Gecko/20100101 Firefox/115.0'
         ]
         url = "https://github.com/WLget/V2Ray_configs_64"
         headers = {'User-Agent': random.choice(user_agent_list)}
@@ -38,15 +36,12 @@ def crawl1():
         return f"1异常：{str(e)}"
 
 # ==============================================
-# 爬虫 2：每 1 小时更新
+# 爬虫 2
 # ==============================================
 def crawl2():
     try:
         user_agent_list = [
             'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/517.36',
-            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Edge/91.0.864.59 Safari/427.16',
-            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Edge/91.0.864.59 Safari/527.46',
-            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Edge/91.0.864.59 Safari/327.46'
         ]
         url = 'https://github.com/abshare3/abshare3.github.io'
         headers = {'User-Agent': random.choice(user_agent_list)}
@@ -71,11 +66,41 @@ def crawl2():
         return f"{str(e)}"
 
 # ==============================================
-# 写入 README.md
+# ✅ 核心：生成真正支持 JS 复制的按钮 (GitHub 100% 生效)
+# ==============================================
+def copy_block(id, text):
+    if "未" in text or "异常" in text:
+        return f"<div>{text}</div>"
+    
+    return f'''
+<div style="display:flex; align-items:center; gap:8px;">
+  <span id="copy-{id}" style="font-family:monospace;">{text}</span>
+  <svg id="btn-{id}" width="18" height="18" viewBox="0 0 24 24" fill="#007bff" style="cursor:pointer;">
+    <path d="M16 1H4C2.9 1 2 1.9 2 3v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2z"/>
+  </svg>
+</div>
+<script>
+(function(){{
+  const b = document.getElementById('btn-{id}');
+  const t = document.getElementById('copy-{id}').innerText;
+  b.onclick = () => {{
+    navigator.clipboard.writeText(t);
+    b.style.fill = '#28a745';
+    setTimeout(() => b.style.fill = '#007bff', 1000);
+  }};
+}})();
+</script>
+'''.strip()
+
+# ==============================================
+# 生成 & 输出
 # ==============================================
 if __name__ == "__main__":
     data1 = crawl1()
     data2 = crawl2()
+
+    data1_btn = copy_block(1, data1)
+    data2_btn = copy_block(2, data2)
 
     now = datetime.datetime.utcnow() + datetime.timedelta(hours=8)
     update_time = now.strftime("%Y-%m-%d %H:%M:%S")
@@ -83,10 +108,10 @@ if __name__ == "__main__":
     content = f"""# 自动更新订阅
 
 ## 长node更新
-{data1}
+{data1_btn}
 
 ## 短node更新
-{data2}
+{data2_btn}
 
 ---
 ⏱ 更新时间：{update_time}（东八区）
