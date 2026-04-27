@@ -2,17 +2,19 @@
 
 ## 长node更新
 <span>https://raw.githubusercontent.com/WLget/V2Ray_configs_64/refs/heads/master/ConfigSub_list.txt</span>
-<button onclick="navigator.clipboard.writeText('https://raw.githubusercontent.com/WLget/V2Ray_configs_64/refs/heads/master/ConfigSub_list.txt').then(()=>alert('复制成功！')).catch(()=>alert('复制失败，请手动复制'))"
-style="margin-left:8px; padding:2px 8px; background:#007bff; color:white; border:none; border-radius:4px; cursor:pointer;">
-一键复制
-</button>
+<svg onclick="navigator.clipboard.writeText(`https://raw.githubusercontent.com/WLget/V2Ray_configs_64/refs/heads/master/ConfigSub_list.txt`)"
+style="width:16px;height:16px;vertical-align:middle;margin-left:6px;cursor:pointer;"
+viewBox="0 0 24 24" fill="currentColor" title="点击复制">
+<path d="M16 1H4C2.9 1 2 1.9 2 3v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+</svg>
 
 ## 短node更新
 <span>https://9qgh4t.absslk.xyz/95bc0006142eb96dedf0b06ff7eca2dd</span>
-<button onclick="navigator.clipboard.writeText('https://9qgh4t.absslk.xyz/95bc0006142eb96dedf0b06ff7eca2dd').then(()=>alert('复制成功！')).catch(()=>alert('复制失败，请手动复制'))"
-style="margin-left:8px; padding:2px 8px; background:#007bff; color:white; border:none; border-radius:4px; cursor:pointer;">
-一键复制
-</button>
+<svg onclick="navigator.clipboard.writeText(`https://9qgh4t.absslk.xyz/95bc0006142eb96dedf0b06ff7eca2dd`)"
+style="width:16px;height:16px;vertical-align:middle;margin-left:6px;cursor:pointer;"
+viewBox="0 0 24 24" fill="currentColor" title="点击复制">
+<path d="M16 1H4C2.9 1 2 1.9 2 3v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+</svg>
 
 ---
-⏱ 全量更新时间：2026-04-27 09:12:25（东八区）
+⏱ 全量更新时间：2026-04-27 09:15:48（东八区）
