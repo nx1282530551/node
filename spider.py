@@ -66,41 +66,25 @@ def crawl2():
         return f"{str(e)}"
 
 # ==============================================
-# ✅ 核心：生成真正支持 JS 复制的按钮 (GitHub 100% 生效)
+# GitHub 唯一可用：复制图标 + 原生复制功能
+# 无JS、不显示代码、点击就能复制
 # ==============================================
-def copy_block(id, text):
+def copy_btn(text):
     if "未" in text or "异常" in text:
-        return f"<div>{text}</div>"
+        return f"`{text}`"
     
-    return f'''
-<div style="display:flex; align-items:center; gap:8px;">
-  <span id="copy-{id}" style="font-family:monospace;">{text}</span>
-  <svg id="btn-{id}" width="18" height="18" viewBox="0 0 24 24" fill="#007bff" style="cursor:pointer;">
-    <path d="M16 1H4C2.9 1 2 1.9 2 3v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2z"/>
-  </svg>
-</div>
-<script>
-(function(){{
-  const b = document.getElementById('btn-{id}');
-  const t = document.getElementById('copy-{id}').innerText;
-  b.onclick = () => {{
-    navigator.clipboard.writeText(t);
-    b.style.fill = '#28a745';
-    setTimeout(() => b.style.fill = '#007bff', 1000);
-  }};
-}})();
-</script>
-'''.strip()
+    # 核心：GitHub 原生代码块，自带复制按钮，无任何文字
+    return f"```copy\n{text}\n```"
 
 # ==============================================
-# 生成 & 输出
+# 生成内容
 # ==============================================
 if __name__ == "__main__":
     data1 = crawl1()
     data2 = crawl2()
 
-    data1_btn = copy_block(1, data1)
-    data2_btn = copy_block(2, data2)
+    data1_btn = copy_btn(data1)
+    data2_btn = copy_btn(data2)
 
     now = datetime.datetime.utcnow() + datetime.timedelta(hours=8)
     update_time = now.strftime("%Y-%m-%d %H:%M:%S")
