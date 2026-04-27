@@ -71,17 +71,19 @@ def crawl2():
         return f"{str(e)}"
 
 # ==============================================
-# 生成带复制按钮的链接
+# 生成 无文字 纯图标复制按钮
 # ==============================================
-def make_copy_btn(link):
-    if not link or "未找到" in link or "异常" in link:
-        return f"<span>{link}</span>"
+def copy_icon(text):
+    if not text or "未" in text or "异常" in text:
+        return f"<span>{text}</span>"
+    
     return f'''
-<span>{link}</span>
-<button onclick="navigator.clipboard.writeText('{link}').then(()=>alert('复制成功！')).catch(()=>alert('复制失败，请手动复制'))"
-style="margin-left:8px; padding:2px 8px; background:#007bff; color:white; border:none; border-radius:4px; cursor:pointer;">
-一键复制
-</button>
+<span>{text}</span>
+<svg onclick="navigator.clipboard.writeText(`{text}`)"
+style="width:16px;height:16px;vertical-align:middle;margin-left:6px;cursor:pointer;"
+viewBox="0 0 24 24" fill="currentColor" title="点击复制">
+<path d="M16 1H4C2.9 1 2 1.9 2 3v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+</svg>
 '''.strip()
 
 # ==============================================
@@ -91,9 +93,9 @@ if __name__ == "__main__":
     data1 = crawl1()
     data2 = crawl2()
 
-    # 生成带按钮的内容
-    data1_with_btn = make_copy_btn(data1)
-    data2_with_btn = make_copy_btn(data2)
+    # 给两个内容都加上复制图标
+    data1_btn = copy_icon(data1)
+    data2_btn = copy_icon(data2)
 
     now = datetime.datetime.utcnow() + datetime.timedelta(hours=8)
     update_time = now.strftime("%Y-%m-%d %H:%M:%S")
@@ -101,10 +103,10 @@ if __name__ == "__main__":
     content = f"""# 自动更新订阅
 
 ## 长node更新
-{data1_with_btn}
+{data1_btn}
 
 ## 短node更新
-{data2_with_btn}
+{data2_btn}
 
 ---
 ⏱ 全量更新时间：{update_time}（东八区）
