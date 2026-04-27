@@ -71,11 +71,29 @@ def crawl2():
         return f"{str(e)}"
 
 # ==============================================
+# 生成带复制按钮的链接
+# ==============================================
+def make_copy_btn(link):
+    if not link or "未找到" in link or "异常" in link:
+        return f"<span>{link}</span>"
+    return f'''
+<span>{link}</span>
+<button onclick="navigator.clipboard.writeText('{link}').then(()=>alert('复制成功！')).catch(()=>alert('复制失败，请手动复制'))"
+style="margin-left:8px; padding:2px 8px; background:#007bff; color:white; border:none; border-radius:4px; cursor:pointer;">
+一键复制
+</button>
+'''.strip()
+
+# ==============================================
 # 写入 README.md
 # ==============================================
 if __name__ == "__main__":
     data1 = crawl1()
     data2 = crawl2()
+
+    # 生成带按钮的内容
+    data1_with_btn = make_copy_btn(data1)
+    data2_with_btn = make_copy_btn(data2)
 
     now = datetime.datetime.utcnow() + datetime.timedelta(hours=8)
     update_time = now.strftime("%Y-%m-%d %H:%M:%S")
@@ -83,10 +101,10 @@ if __name__ == "__main__":
     content = f"""# 自动更新订阅
 
 ## 长node更新
-{data1}
+{data1_with_btn}
 
 ## 短node更新
-{data2}
+{data2_with_btn}
 
 ---
 ⏱ 全量更新时间：{update_time}（东八区）
