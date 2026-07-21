@@ -7,8 +7,8 @@ https://raw.githubusercontent.com/WLget/V2Ray_configs_64/refs/heads/master/Confi
 
 ## 短node更新
 ```copy
-https://mNzdA5.absslk.xyz/1fa345ee2337289ee609ba690114fc69
+HTTPSConnectionPool(host='github.com', port=443): Read timed out. (read timeout=10)
 ```
 
 ---
-⏱ 更新时间：2026-07-21 14:30:23（东八区）
+⏱ 更新时间：2026-07-21 14:31:04（东八区）
