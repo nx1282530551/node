@@ -7,8 +7,8 @@ https://raw.githubusercontent.com/WLget/V2Ray_configs_64/refs/heads/master/Confi
 
 ## 短node更新
 ```copy
-https://fNliAR.absslk.xyz/69c08deb62aa417b01c0666c1976f19d
+https://ezqBvd.absslk.xyz/58fd3ac53428d219304cee18fe51fea0
 ```
 
 ---
-⏱ 更新时间：2026-09-04 01:37:19（东八区）
+⏱ 更新时间：2026-09-04 04:41:15（东八区）
