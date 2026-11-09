@@ -1,14 +1,12 @@
 # 自动更新订阅
 
 ## 长node更新
-```copy
-https://raw.githubusercontent.com/WLget/V2Ray_configs_64/refs/heads/master/ConfigSub_list.txt
-```
+`1异常：HTTPSConnectionPool(host='github.com', port=443): Read timed out. (read timeout=10)`
 
 ## 短node更新
 ```copy
-https://UVFcOe.absslk.xyz/9c5c3459b2b0972bf816731256697cfe
+HTTPSConnectionPool(host='github.com', port=443): Read timed out. (read timeout=10)
 ```
 
 ---
-⏱ 更新时间：2026-11-09 07:28:17（东八区）
+⏱ 更新时间：2026-11-09 13:15:43（东八区）
