@@ -6,9 +6,7 @@ https://raw.githubusercontent.com/WLget/V2Ray_configs_64/refs/heads/master/Confi
 ```
 
 ## 短node更新
-```copy
-https://M6FcDG.absslk.xyz/3094ac4f297d025d8c690d1ac29e233c
-```
+`未找到内容`
 
 ---
-⏱ 更新时间：2026-11-12 17:27:13（东八区）
+⏱ 更新时间：2026-11-13 00:39:11（东八区）
